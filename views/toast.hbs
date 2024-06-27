@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toast Notification</title>
+<link rel="stylesheet" href="/css/toast.css">
+<style>
+    .toast-container {
+        right: 20px;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    {{!-- <h1>hi</h1> --}}
+    <button onclick="showToast('You need to login first')" id="toastButton">click</button>
+    <div class="toast-container" id="toastContainer"></div>
+    {{!-- <script src="toast.js"></script> --}}
+    <script>
+        const toastButton = document.getElementById('toastButton');
+        const toastContainer = document.getElementById('toastContainer');
+
+        function showToast(message) {
+            console.log('Toast message:', message); // Debugging output
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerText = message;
+            toastContainer.appendChild(toast);
+
+            // Ensure the container is visible when adding a toast
+            toastContainer.style.display = 'block';
+
+            setTimeout(() => {
+                toast.remove();
+                // Hide the container if no toasts are left
+                if (toastContainer.children.length === 0) {
+                    toastContainer.style.display = 'none';
+                }
+            }, 3000); // Remove toast after 3 seconds
+        }
+
+        // Change button style when clicked
+        toastButton.addEventListener('click', () => {
+            toastButton.classList.add('clicked');
+        });
+    </script>
+</body>
+</html>

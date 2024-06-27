@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        p{
+            text-decoration: none;
+        }
+        #or
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form onsubmit="return validateForm()" action="templates.html">
+        <fieldset>
+            <legend>Signup</legend>
+        <label for="firstname">Enter your First Name:</label>
+        <input type="text" id="firstname">
+        <br>
+        <br>
+        <label for="lastname">Enter your last Name:</label>
+        <input type="text" id="lastname">
+        <br>
+        <br>
+        <label for="emailid">Enter your Email Id:</label>
+        <input type="email" id="emailid">
+        <br>
+        <br>
+        <label for="pass">Enter Password:</label>
+        <input type="password" id="pass">
+        <br>
+        <br>
+        <label for="passw">Confirm Password:</label>
+        <input type="password" id="passw">
+        <br>
+        </fieldset>
+        <div class="center-button">
+        <input type="submit" value="Sign Up">
+        <p id="or">           Or            </p>
+        <p>Already have an account?<a href="login.html"  style="text-decoration:none">Login</a></p>
+        </div>
+    </form>
+    
+</div>
+<script src="01.js"></script>
+</body>
+</html>

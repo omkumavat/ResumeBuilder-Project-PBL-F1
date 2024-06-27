@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/generate-pdf" method="POST">
+    <textarea name="resumeContent"></textarea>
+    <button type="submit">Generate PDF</button>
+</form>
+
+<script>
+    document.querySelector('form[action="/generate-pdf"]').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const resumeContent = document.documentElement.outerHTML; // Get the entire HTML body content
+    const response = await fetch('/generate-pdf', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ resumeContent })
+    });
+    if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'resume.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    } else {
+        console.error('Failed to generate PDF');
+    }
+});
+
+</script>
+
+</body>
+</html>

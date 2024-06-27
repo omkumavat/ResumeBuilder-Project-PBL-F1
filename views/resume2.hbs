@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Resume Design</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/resume2.css"> 
+	<link rel="stylesheet" href="index1.css">
+	<style>:root {
+    --main-color: #db5326;
+    --secondary-color: #22222d;
+    --gray: #ebebeb;
+    --darkgray: #c2c2c2;
+    --white: #fff;
+    --lightblack: #4e4e4e;
+    --heading-font: 'Oswald', sans-serif;
+    --normal-font: system-ui;
+}
+
+body {
+    background: var(--darkgray);
+    font-family: var(--normal-font)
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    background: var(--white);
+    box-shadow: 5px 21px 19px 4px #0c0c0c57;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.content {
+    padding: 20px;
+}
+
+h3 {
+    margin: 0px;
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.content p {
+    margin: 0px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.left-side {
+    margin-left: 50px;
+    width: 260px;
+    float: left;
+    background: var(--gray);
+    height: 100%;
+}
+
+.right-side {
+    width: 490px;
+    float: left;
+}
+
+.profile-img {
+    border-top: 15px solid var(--main-color);
+    border-bottom: 15px solid var(--main-color);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-weight: 200;
+}
+
+h4 {
+    margin: 0px;
+    color: var(--lightblack);
+    margin-top: 10px;
+}
+
+ul {
+    margin-left: -40px;
+    margin-bottom: 40px;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+ul li img {
+    width: 40px;
+    padding-right: 15px;
+}
+
+ul li span {
+    position: absolute;
+    bottom: -12px;
+    left: 5px;
+    font-size: 11px;
+}
+
+.rightside-content {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: var(--normal-font);
+    font-weight: normal;
+    letter-spacing: 2px;
+    position: relative;
+    margin-top: 10px;
+}
+
+h1::after {
+    content: "";
+    height: 2px;
+    width: 100px;
+    position: absolute;
+    background: var(--main-color);
+    bottom: -10px;
+    left: 0;
+}
+
+.para {
+    letter-spacing: 3px;
+    font-family: var(--normal-font);
+    font-size: 17px;
+    margin-top: -10px;
+}
+
+.para1 {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.sub-heading {
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: system-ui;
+}
+
+.para2 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.para2 span {
+    background: var(--main-color);
+    padding: 3px 10px;
+    border-radius: 6px;
+    color: white;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.ex {
+    margin-left: -40px;
+    margin-bottom: 0px;
+}
+
+.ex li {
+    list-style: square;
+    position: relative;
+}</style>
+</head>
+
+<body>
+
+	<main>
+		<div class="left-side">
+			<br />
+			{{#if personalData.fileName}}
+			<img src="/{{personalData.fileName}}" width="100%" class="profile-img" />
+			{{/if}}
+			<div class="content">
+				<h2>CONTACT</h2>
+				<h4>Phone</h4>
+				<p>{{contactData.mobile}}</p>
+				<h4>Email</h4>
+				<p>{{contactData.email}}</p>
+				<h4>Address</h4>
+				<p>{{contactData.address}}</p>
+			</div>
+
+			<div class="content">
+				<h2>HOBBIES</h2>
+				<ul>
+					<li><img src="/icons8-hobby-64.png"><span>{{hobby1}}</span></li>
+					<li><img src="/icons8-hobby-64.png"><span>{{hobby2}}</span></li>
+					<li><img src="/icons8-hobby-64.png"><span>{{hobby3}}</span></li>
+					<li><img src="/icons8-hobby-64.png"><span>{{hobby4}}</span></li>
+				</ul>
+			</div>
+			<br /><br />
+		</div>
+		<div class="right-side">
+			<div class="rightside-content">
+				<h1>{{personalData.fname}}<br /><strong>{{personalData.lname}}</strong></h1>
+				<p class="para">{{personalData.pname}}</p>
+				<br /><br />
+				<h2>ABOUT ME</h2>
+				<p class="para1">{{personalData.person}} </p>
+				<br />
+				<h2>EDUCATION</h2>
+				<h4 class="sub-heading">{{secondaryData.sname }} &nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{secondaryData.pyear}}</h4>
+				{{!-- <p class="para1">{{secondaryData.pyear}}</p> --}}
+				<p class="para1">Percentage : {{secondaryData.percentage}}</p>
+				<hr>
+
+				<h4 class="sub-heading">{{highSecondaryData.iname}} &nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{highSecondaryData.payear}}
+				</h4>
+				<p class="para1">{{highSecondaryData.Science}}</p>
+				{{!-- <p class="para1">{{highSecondaryData.payear}}</p> --}}
+				<p class="para1">Percentage : {{highSecondaryData.percentageb}}</p>
+				<hr>
+
+
+				<h4 class="sub-heading">{{underGraduateData.cname}} &nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{underGraduateData.syear}}
+					- {{underGraduateData.eyear}}</h4>
+				{{!-- <p class="para1">{{underGraduateData.syear}} - {{underGraduateData.eyear}}</p> --}}
+				<p class="para1">CGPA : {{underGraduateData.cgpa}}</p>
+				<hr>
+				<br />
+
+				<h2>EXPERIENCE</h2>
+				<h4 class="sub-heading">{{experienceData.comp}}</h4>
+				<p class="para2">{{experienceData.jdate}} &nbsp;&nbsp;To&nbsp;&nbsp; {{experienceData.edate}}</p>
+				<p class="para1">{{experienceData.disc}}</p>
+
+				<br />
+
+				<h2>EXPERTISE</h2>
+				<ul class="ex">
+					<li>{{skill1}}</li><br>
+					<li>{{skill2}}</li><br>
+					<li>{{skill3}}</li><br>
+					<li>{{skill4}}</li><br>
+				</ul>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<form action="/generate-pdf" method="post" id="pdfForm">
+			<!-- <textarea name="resumeContent"></textarea> -->
+			<input type="hidden" name="resumeContent" id="resumeContent" style="display: none;">
+			<button type="submit">Generate PDF</button>
+		</form>
+	</main>
+
+	<script>
+		function downloadPDF() {
+			const htmlContent = document.documentElement.innerHTML;
+			document.getElementById('htmlContent').value = htmlContent;
+			document.getElementById('pdfForm').submit();
+		}
+		document.addEventListener('DOMContentLoaded', function () {
+			// Get the entire HTML content of the page
+			const htmlContent = document.documentElement.outerHTML;
+			// Set the HTML content into the input field
+			document.getElementById('resumeContent').value = htmlContent;
+		});
+	</script>
+
+</body>
+
+</html>

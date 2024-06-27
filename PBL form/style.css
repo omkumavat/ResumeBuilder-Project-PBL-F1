@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin:0;
+    font-size: 60px;
+
+}
+
+.topnav {
+    overflow: hidden;
+    width: 100%;
+    background: linear-gradient(to left, #5773cd, #b03cd3);
+    height: 70px;
+    text-align: center;
+    column-gap: 150px;
+    display: flex;
+    justify-content: space-around;
+    position:fixed;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans serif;
+  }
+  
+  .topnav a {
+    color: #000;
+    text-align: right;
+    padding-top:5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .topnav a:hover {
+    background-color:blue;
+    color: #000;
+    border-radius: 50px;
+    transform: scale(1.05);
+  }
+  
+  .topnav a.active {
+    /* background-color: blue; */
+    color: #fff;
+    border-radius: 50px;
+  }
+
+  .logo img{
+    /* width:/x; */
+    height: 50px;
+  }
+
+.logo_name{
+  font-size: 1.5rem;
+
+}
+button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    border-radius: 45px;
+    padding: 10px;
+    background-color: #0d0e7a;
+    color:white;
+    text-align: right;
+    box-shadow: #000;
+}
+.templates {
+  padding:0px;
+}
+.header {
+  height: 70px;
+  width:fit-content;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.templates img {
+  /* margin-top: -150px; */
+  height: 480px;
+  width: 450px;
+  padding: 20px;
+}
+
+.templates img:hover {
+  transform: scale(1.3);
+}

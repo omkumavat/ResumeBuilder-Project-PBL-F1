@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .center-legend {
+    text-align: center;
+}
+.center-button {
+    text-align: center;
+}
+form {
+    height: 90vh;
+    width: 100%; 
+    margin: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    /* background-image: url("download.jpg"); */
+    background-color: rgb(228, 236, 233);
+    font-family: Arial, sans-serif;
+}
+
+form {
+    height: 100vh;
+    width: 100%; 
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(95, 68, 129, 0.1); 
+    padding: 30px;
+}
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.center-button button {
+    text-align: center;
+    background-color: #4caf50; 
+    /* color: white; */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.submitted {
+    background-color: green; /* Change color when form is submitted */
+}
+
+input[type="submit"] {
+    background-color: #4caf50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #0da545;
+}
+input[type="button"] {
+    background-color: #4caf50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.circle {
+    float:left;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    background: #fff;
+    border: 3px solid #000;
+    color: #000;
+    text-align: center;
+    font: 25px Arial, sans-serif;
+}
+input[type="button"]:hover {
+    background-color: #0da545;
+}
+.content{
+    float:left;
+    padding: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <div  class="circle">1</div>
+    <div class="content">Personal Details -----</div>
+    <div class="circle">2</div>
+    <div class="content">Contact Details -----</div>
+    <div class="circle">3</div>
+    <div class="content">10th Details -----</div>
+    <div class="circle">4</div>
+    <div class="content">12th  Details -----</div>
+    <div class="circle">5</div>
+    <div class="content">Undergraduate Education Details -----</div>
+    <div class="circle">6</div>
+    <div class="content">Skills -----</div>
+    <div class="circle">7</div>
+    <div class="content">Work Experience -----</div>
+    <div class="circle">8</div>
+    <div class="content">Hobby</div>
+    <form onsubmit="return validateForm()" action="/12details" method="POST">
+        <fieldset class="center-legend">
+        <legend>12th Education Details</legend>
+        <label for="iname">College Name:</label>
+        <input type="text" id="iname" name="iname" required><br><br>
+        <label for="Science">Select your Stream:</label>
+        <input type="radio" id="Science" name="Science" value="Science">
+        <label for="Science">Science</label>
+        <input type="radio" id="Commerce" name="Science" value="Commerce">
+        <label for="Commerce">Commerce</label>
+        <input type="radio" id="Art" name="Science" value="Art">
+        <label for="Art">Art</label><br><br>
+        <label for="payear">Passing Year:</label>
+        <input type="year" id="payear" name="payear" required><br><br>
+        <label for="percentageb">Percentage:</label>
+        <input type="text" id="percentageb" name="percentageb" required><br><br>
+    </fieldset>  
+    <div class="center-button">
+        <a href="/home/secondary" id="edu"><input type="button" value="Back"></a>
+        <input type="submit" value="Next">
+        </div>
+    </form>
+    <script src="01.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="/css/2sign.css">
+    <title>signin-signup</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="/login" method="POST" class="sign-in-form" id="login">
+                <h2 class="title">Login</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <!-- <a href="#" class="forgot-password">Forgot password?</a> -->
+                {{!-- <button id="bt"><input type="submit" value="Login" class="btn"></button> --}}
+               <button type="submit" onclick="tap()" value="Login" class="btn" id="bt">Login</button>
+                <p>Don't have an account? <a href="#" class="account-text" id="sign-up-link">Sign up</a></p>
+                <br>
+            </form>
+            {{#if error}}
+                <p id="er"> {{error}}</p>
+                {{/if}}
+            <form action="/signup" method="POST" class="sign-up-form">
+                <h2 class="title">Sign UP</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" name="email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <input type="submit" value="Sign up" class="btn">
+                <p>Already have an account? <a href="#" class="account-text" id="sign-in-link">Sign in</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="2sign.js"></script>
+</body>
+
+</html>

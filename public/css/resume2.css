@@ -1,0 +1,163 @@
+:root {
+    --main-color: #db5326;
+    --secondary-color: #22222d;
+    --gray: #ebebeb;
+    --darkgray: #c2c2c2;
+    --white: #fff;
+    --lightblack: #4e4e4e;
+    --heading-font: 'Oswald', sans-serif;
+    --normal-font: system-ui;
+}
+
+body {
+    background: var(--darkgray);
+    font-family: var(--normal-font)
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    background: var(--white);
+    box-shadow: 5px 21px 19px 4px #0c0c0c57;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.content {
+    padding: 20px;
+}
+
+h3 {
+    margin: 0px;
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.content p {
+    margin: 0px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.left-side {
+    margin-left: 50px;
+    width: 260px;
+    float: left;
+    background: var(--gray);
+    height: 100%;
+}
+
+.right-side {
+    width: 490px;
+    float: left;
+}
+
+.profile-img {
+    border-top: 15px solid var(--main-color);
+    border-bottom: 15px solid var(--main-color);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-weight: 200;
+}
+
+h4 {
+    margin: 0px;
+    color: var(--lightblack);
+    margin-top: 10px;
+}
+
+ul {
+    margin-left: -40px;
+    margin-bottom: 40px;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+ul li img {
+    width: 40px;
+    padding-right: 15px;
+}
+
+ul li span {
+    position: absolute;
+    bottom: -12px;
+    left: 5px;
+    font-size: 11px;
+}
+
+.rightside-content {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: var(--normal-font);
+    font-weight: normal;
+    letter-spacing: 2px;
+    position: relative;
+    margin-top: 10px;
+}
+
+h1::after {
+    content: "";
+    height: 2px;
+    width: 100px;
+    position: absolute;
+    background: var(--main-color);
+    bottom: -10px;
+    left: 0;
+}
+
+.para {
+    letter-spacing: 3px;
+    font-family: var(--normal-font);
+    font-size: 17px;
+    margin-top: -10px;
+}
+
+.para1 {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.sub-heading {
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: system-ui;
+}
+
+.para2 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.para2 span {
+    background: var(--main-color);
+    padding: 3px 10px;
+    border-radius: 6px;
+    color: white;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.ex {
+    margin-left: -40px;
+    margin-bottom: 0px;
+}
+
+.ex li {
+    list-style: square;
+    position: relative;
+}

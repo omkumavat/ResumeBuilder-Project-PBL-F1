@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Select Your Resume Template</h1><br>
+        <div style="flex flex-row">
+           <img src="/resume1.jpg" width="500px" height="500px" id="imga1" style="cursor:pointer; transition: opacity 0.5s ease-in-out;">
+            <img src="/resume2.jpg" width="500px"  height="500px" id="imga2" style="cursor:pointer">
+            <img src="/resume3.jpg" width="500px"  height="500px" id="imga3" style="cursor:pointer">
+        </div>
+    </div>
+    <script>
+        document.getElementById('imga1').addEventListener('click', function (event) {
+                window.location.href = '/home/get-resume3';
+        });
+        document.getElementById('imga2').addEventListener('click', function (event) {
+                window.location.href = '/home/get-resume1';
+        });
+        document.getElementById('imga3').addEventListener('click', function (event) {
+                window.location.href = '/home/get-resume2';
+        });
+    </script>
+</body>
+</html>

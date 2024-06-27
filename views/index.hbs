@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        body {
+            background-image: url("back.jpg");
+        }
+
+        /* CSS for Toast Container */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            top: 90px;
+            right: 470px;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Semi-transparent background */
+            color: #fff;
+            width: 600px;
+            height: 600px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            border: 1px solid black;
+            z-index: 100;
+            /* Ensure the toast appears above other content */
+        }
+
+        /* CSS for Toast */
+        .toast {
+            margin-bottom: -10px;
+            /* Add space between consecutive toasts */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="logo">
+            <img src="logo1.svg" alt="logo">
+            <p class="logo_name">ResumeForge</p>
+        </div>
+        <a class="active" href="#home">Home</a>
+        <a class="active" href="#contact">Contact</a>
+        <a class="active" href="login" id="login">{{nm}}</a>
+        <a class="active" href="#about">About</a>
+    </div>
+    <div class="container">
+        <button id="btn" type="button" onclick="showToast('You need to login first')">Create Resume</button>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <script>
+        {{!-- document.getElementById('login').addEventListener('click', function (event) {
+            const innerText = this.innerText; // Get the inner text of the clicked element
+            if (innerText !== "Login") {
+                event.preventDefault(); // Prevent default action if not "Login"
+                showToast('You need to login first'); // Show toast message
+            }
+        }); --}}
+
+        document.getElementById('btn').addEventListener('click', function (event) {
+            const innerText = document.getElementById('login').innerText; // Get the inner text of the 'login' element
+            if (innerText === "Login") {
+                event.preventDefault(); // Prevent default action if not "Login"
+                showToast('You need to login first'); // Show toast message
+            }else{
+                window.location.href = '/home/personal';
+            }
+        });
+
+        const toastContainer = document.getElementById('toastContainer');
+
+        function showToast(message) {
+            console.log('Toast message:', message); // Debugging output
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerText = message;
+            toastContainer.appendChild(toast);
+
+            // Ensure the container is visible when adding a toast
+            toastContainer.style.display = 'block';
+
+            setTimeout(() => {
+                toast.remove();
+                // Hide the container if no toasts are left
+                if (toastContainer.children.length === 0) {
+                    toastContainer.style.display = 'none';
+                }
+            }, 1000); // Remove toast after 3 seconds
+        }
+    </script>
+</body>
+
+</html>
